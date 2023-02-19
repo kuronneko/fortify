@@ -38,6 +38,7 @@ class FortifyServiceProvider extends ServiceProvider
     {
 
         Fortify::loginView('auth.login');
+        Fortify::registerView('auth.register');
 
         //custom login with return $user, normal way return to Home
 /*         Fortify::authenticateUsing(function(Request $request) {

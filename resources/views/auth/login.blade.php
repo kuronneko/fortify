@@ -1,16 +1,25 @@
-<form action="{{ route('login') }}" method="POST">
+<form method="POST" action="{{ route('login') }}">
     @csrf
-    <label>
-        <input type="email" name="email" placeholder="Email..." value="{{ old('email') }}">
-    </label>
-    @error('email')
-        <div>{{ $message }}</div>
-    @enderror
-    <label>
-        <input type="password" name="password" placeholder="Password...">
+
+    <div>
+        <label for="email">{{ __('Email') }}</label>
+        <input id="email" type="email" name="email" value="{{ old('email') }}" required autofocus>
+
+        @error('email')
+            <span>{{ $message }}</span>
+        @enderror
+    </div>
+
+    <div>
+        <label for="password">{{ __('Password') }}</label>
+        <input id="password" type="password" name="password" required>
+
         @error('password')
-        <div>{{ $message }}</div>
-    @enderror
-    </label>
-    <input type="submit" value="Login">
+            <span>{{ $message }}</span>
+        @enderror
+    </div>
+
+    <div>
+        <button type="submit">{{ __('Login') }}</button>
+    </div>
 </form>
