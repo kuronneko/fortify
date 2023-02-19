@@ -19,6 +19,7 @@
         @enderror
     </div>
 
+    <a href="/forgot-password">Forgot Password?</a>
     <div>
         <button type="submit">{{ __('Login') }}</button>
     </div>
